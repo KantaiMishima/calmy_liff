@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
 import Sponsorship from './Sponsorship/Sponsorship';
 import MainMap from './MainMap/MainMap';
-import { database, initializeApp } from 'firebase';
+import { initializeApp } from 'firebase/app'
+import { database } from 'firebase';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,11 +24,16 @@ function App() {
   } ,[])
 
   useEffect(() => {
-      database().ref('Test/Cust/2019-09-29').off()
-      database().ref('Test/Cust/2019-09-29').on('value', snapshot => {
-        setIsOpen(!isOpen);
-      });
-  }, [isOpen]);
+    let isFirst = true;
+    database().ref('Test/Cust/2019-09-29').off()
+    database().ref('Test/Cust/2019-09-29').on('value', snapshot => {
+      if (isFirst) {
+        isFirst = false;
+        return;
+      }
+      setIsOpen(!isOpen);
+    });
+  } ,[isOpen])
 
   return (
     <div className="App">

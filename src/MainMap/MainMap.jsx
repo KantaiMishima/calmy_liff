@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Grid, AppBar, Toolbar } from '@material-ui/core';
 import img from "./image.png";
 import InsertEmoticonTwoToneIcon from '@material-ui/icons/InsertEmoticonTwoTone';
