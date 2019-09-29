@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, AppBar, Toolbar } from '@material-ui/core';
 import Item from './Item/Item';
+import { Link } from 'react-router-dom';
 
 function Sponsorship() {
   return (
@@ -19,6 +20,7 @@ function Sponsorship() {
                 <Item isOpen name="セブン‐イレブン 広島宝町店" url="https://goo.gl/maps/4LubzaZACBw6SP9A8" />
             </Grid>
         </Grid>
+        <Link to="/">トイレ空き状況マップ</Link>
     </Grid>
   );
 }
