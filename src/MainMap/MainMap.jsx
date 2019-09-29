@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid, AppBar, Toolbar } from '@material-ui/core';
 import img from "./image.png";
 import InsertEmoticonTwoToneIcon from '@material-ui/icons/InsertEmoticonTwoTone';
@@ -12,8 +12,7 @@ const tirePosition = {
     left: '30%',
 }
 
-function MainMap() {
-    const [isOpen, setIsOpen] = useState(false);
+function MainMap(props) {
     return (
         <Grid container direction="column">
             <AppBar position="static">
@@ -21,7 +20,7 @@ function MainMap() {
             </AppBar>
             <Grid style={{ position: 'relative' }} container direction="column">
                 <img alt="" style={{ width: '100vw' }} src={img} ></img>,
-                {isOpen ? <InsertEmoticonTwoToneIcon fontSize="large" color="primary" style={tirePosition} /> : <SentimentVeryDissatisfiedTwoToneIcon fontSize="large" color="secondary" style={tirePosition} />}
+                {props.isOpen ? <InsertEmoticonTwoToneIcon fontSize="large" color="primary" style={tirePosition} /> : <SentimentVeryDissatisfiedTwoToneIcon fontSize="large" color="secondary" style={tirePosition} />}
             </Grid>
         </Grid>
     );
