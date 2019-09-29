@@ -8,7 +8,7 @@ function MainMap() {
         <AppBar position="static">
             <Toolbar>トイレ空き状況</Toolbar>
         </AppBar>
-        <img style={{ maxWidth: '100vw' }} src={img} ></img>
+        <img alt="" style={{ maxWidth: '100vw' }} src={img} ></img>
     </Grid>
   );
 }
